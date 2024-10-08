@@ -27,4 +27,12 @@ test('render one row per user v3', () => {
 
 test('render the email and name of each user v1', () => {
   render(<UserList users={users} />);
+
+  for (let user of users) {
+    const name = screen.getByRole('cell', { name: user.name });
+    const email = screen.getByRole('cell', { name: user.email });
+
+    expect(name).toBeInTheDocument();
+    expect(email).toBeInTheDocument();
+  }
 });
