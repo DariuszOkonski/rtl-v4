@@ -2,6 +2,7 @@ import './App.css';
 import { useState } from 'react';
 import UserForm from './UserForm';
 import UserList from './UserList';
+import RoleExample from './RoleExample';
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -12,6 +13,8 @@ function App() {
 
   return (
     <div className='App'>
+      <RoleExample />
+      <hr />
       <UserForm onUserAdd={onUserAdd} />
       <hr />
       <UserList users={users} />
